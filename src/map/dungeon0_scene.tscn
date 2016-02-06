@@ -1,0 +1,384 @@
+[gd_scene load_steps=54 format=1]
+
+[ext_resource path="res://darken.tres" type="CanvasItemMaterial" id=1]
+[ext_resource path="res://map/sand_0.atex" type="Texture" id=2]
+[ext_resource path="res://map/sand_1.atex" type="Texture" id=3]
+[ext_resource path="res://map/sand_10.atex" type="Texture" id=4]
+[ext_resource path="res://map/sand_11.atex" type="Texture" id=5]
+[ext_resource path="res://map/sand_13.atex" type="Texture" id=6]
+[ext_resource path="res://map/sand_14.atex" type="Texture" id=7]
+[ext_resource path="res://map/sand_15.atex" type="Texture" id=8]
+[ext_resource path="res://map/sand_16.atex" type="Texture" id=9]
+[ext_resource path="res://map/sand_18.atex" type="Texture" id=10]
+[ext_resource path="res://map/sand_19.atex" type="Texture" id=11]
+[ext_resource path="res://map/sand_2.atex" type="Texture" id=12]
+[ext_resource path="res://map/sand_20.atex" type="Texture" id=13]
+[ext_resource path="res://map/sand_21.atex" type="Texture" id=14]
+[ext_resource path="res://map/sand_22.atex" type="Texture" id=15]
+[ext_resource path="res://map/sand_24.atex" type="Texture" id=16]
+[ext_resource path="res://map/sand_25.atex" type="Texture" id=17]
+[ext_resource path="res://map/sand_26.atex" type="Texture" id=18]
+[ext_resource path="res://map/sand_27.atex" type="Texture" id=19]
+[ext_resource path="res://map/sand_28.atex" type="Texture" id=20]
+[ext_resource path="res://map/sand_3.atex" type="Texture" id=21]
+[ext_resource path="res://map/sand_30.atex" type="Texture" id=22]
+[ext_resource path="res://map/sand_31.atex" type="Texture" id=23]
+[ext_resource path="res://map/sand_32.atex" type="Texture" id=24]
+[ext_resource path="res://map/sand_33.atex" type="Texture" id=25]
+[ext_resource path="res://map/sand_34.atex" type="Texture" id=26]
+[ext_resource path="res://map/sand_36.atex" type="Texture" id=27]
+[ext_resource path="res://map/sand_37.atex" type="Texture" id=28]
+[ext_resource path="res://map/sand_38.atex" type="Texture" id=29]
+[ext_resource path="res://map/sand_39.atex" type="Texture" id=30]
+[ext_resource path="res://map/sand_4.atex" type="Texture" id=31]
+[ext_resource path="res://map/sand_40.atex" type="Texture" id=32]
+[ext_resource path="res://map/sand_42.atex" type="Texture" id=33]
+[ext_resource path="res://map/sand_43.atex" type="Texture" id=34]
+[ext_resource path="res://map/sand_44.atex" type="Texture" id=35]
+[ext_resource path="res://map/sand_45.atex" type="Texture" id=36]
+[ext_resource path="res://map/sand_46.atex" type="Texture" id=37]
+[ext_resource path="res://map/sand_48.atex" type="Texture" id=38]
+[ext_resource path="res://map/sand_49.atex" type="Texture" id=39]
+[ext_resource path="res://map/sand_5.atex" type="Texture" id=40]
+[ext_resource path="res://map/sand_50.atex" type="Texture" id=41]
+[ext_resource path="res://map/sand_51.atex" type="Texture" id=42]
+[ext_resource path="res://map/sand_52.atex" type="Texture" id=43]
+[ext_resource path="res://map/sand_54.atex" type="Texture" id=44]
+[ext_resource path="res://map/sand_55.atex" type="Texture" id=45]
+[ext_resource path="res://map/sand_56.atex" type="Texture" id=46]
+[ext_resource path="res://map/sand_57.atex" type="Texture" id=47]
+[ext_resource path="res://map/sand_58.atex" type="Texture" id=48]
+[ext_resource path="res://map/sand_6.atex" type="Texture" id=49]
+[ext_resource path="res://map/sand_7.atex" type="Texture" id=50]
+[ext_resource path="res://map/sand_8.atex" type="Texture" id=51]
+[ext_resource path="res://map/sand_9.atex" type="Texture" id=52]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = Vector2Array( -12, -12, 12, -12, 12, 12, -12, 12 )
+polygons = [ IntArray( 0, 1, 2, 3 ) ]
+outlines = [ Vector2Array( -12, -12, 12, -12, 12, 12, -12, 12 ) ]
+
+[node name="Node" type="Node2D"]
+
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Sprite" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 0, 0.663422 )
+texture = ExtResource( 2 )
+
+[node name="Sprite1" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 28.5469, 0.448782 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 57.3085, 0.0195026 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 90.7581, 0.459625 )
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 124.208, 0.0195007 )
+texture = ExtResource( 6 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 156.337, 0.89975 )
+texture = ExtResource( 7 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 189.346, 0.0195007 )
+texture = ExtResource( 8 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 0.0921021, 32.1487 )
+texture = ExtResource( 9 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 31.7812, 32.5889 )
+texture = ExtResource( 10 )
+
+[node name="Sprite9" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 63.0302, 33.029 )
+texture = ExtResource( 11 )
+
+[node name="Sprite10" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 94.7193, 31.7086 )
+texture = ExtResource( 12 )
+
+[node name="Sprite11" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 125.968, 32.1487 )
+texture = ExtResource( 13 )
+
+[node name="Sprite12" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 159.418, 31.7086 )
+texture = ExtResource( 14 )
+
+[node name="Sprite13" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 193.308, 33.029 )
+texture = ExtResource( 15 )
+
+[node name="Sprite14" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 1.85262, 62.0773 )
+texture = ExtResource( 16 )
+
+[node name="Sprite15" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 30.4608, 63.8378 )
+texture = ExtResource( 17 )
+
+[node name="Sprite16" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 63.4703, 63.8378 )
+texture = ExtResource( 18 )
+
+[node name="Sprite17" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 96.0397, 65.1582 )
+texture = ExtResource( 19 )
+
+[node name="Sprite18" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 125.528, 67.3588 )
+texture = ExtResource( 20 )
+
+[node name="Sprite19" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 153.256, 67.799 )
+texture = ExtResource( 21 )
+
+[node name="Sprite20" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 193.748, 68.2391 )
+texture = ExtResource( 22 )
+
+[node name="Sprite21" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( -3.86903, 92.446 )
+texture = ExtResource( 23 )
+
+[node name="Sprite22" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 25.1793, 94.6467 )
+texture = ExtResource( 24 )
+
+[node name="Sprite23" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 59.5092, 94.6467 )
+texture = ExtResource( 25 )
+
+[node name="Sprite24" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 94.2791, 95.0868 )
+texture = ExtResource( 26 )
+
+[node name="Sprite25" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 124.648, 95.967 )
+texture = ExtResource( 27 )
+
+[node name="Sprite26" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 152.816, 97.2874 )
+texture = ExtResource( 28 )
+
+[node name="Sprite27" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 193.308, 99.0479 )
+texture = ExtResource( 29 )
+
+[node name="Sprite28" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( -5.71834, 126.912 )
+texture = ExtResource( 30 )
+
+[node name="Sprite29" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 26.1258, 128.902 )
+texture = ExtResource( 31 )
+
+[node name="Sprite30" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 59.9602, 127.575 )
+texture = ExtResource( 32 )
+
+[node name="Sprite31" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 95.1215, 130.892 )
+texture = ExtResource( 33 )
+
+[node name="Sprite32" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 128.292, 130.229 )
+texture = ExtResource( 34 )
+
+[node name="Sprite33" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 157.483, 130.892 )
+texture = ExtResource( 35 )
+
+[node name="Sprite34" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 192.644, 131.555 )
+texture = ExtResource( 36 )
+
+[node name="Sprite35" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( -13.016, 164.063 )
+texture = ExtResource( 37 )
+
+[node name="Sprite36" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 23.4721, 164.063 )
+texture = ExtResource( 38 )
+
+[node name="Sprite37" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 58.6333, 165.39 )
+texture = ExtResource( 39 )
+
+[node name="Sprite38" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 95.1214, 168.044 )
+texture = ExtResource( 40 )
+
+[node name="Sprite39" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 134.263, 169.37 )
+texture = ExtResource( 41 )
+
+[node name="Sprite40" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 162.79, 169.37 )
+texture = ExtResource( 42 )
+
+[node name="Sprite41" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 195.961, 169.37 )
+texture = ExtResource( 43 )
+
+[node name="Sprite42" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( -7.01041, 202.301 )
+texture = ExtResource( 44 )
+
+[node name="Sprite43" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 22.9264, 201.702 )
+texture = ExtResource( 45 )
+
+[node name="Sprite44" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 53.462, 202.301 )
+texture = ExtResource( 46 )
+
+[node name="Sprite45" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 86.3925, 202.9 )
+texture = ExtResource( 47 )
+region_rect = Rect2( 33, 28, 13, 84 )
+
+[node name="Sprite46" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 122.317, 205.295 )
+texture = ExtResource( 48 )
+
+[node name="Sprite47" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 157.642, 206.492 )
+texture = ExtResource( 49 )
+
+[node name="Sprite48" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 193.566, 204.696 )
+texture = ExtResource( 50 )
+
+[node name="Sprite49" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 2.56938, 237.028 )
+texture = ExtResource( 51 )
+
+[node name="Sprite50" type="Sprite" parent="."]
+
+material/material = ExtResource( 1 )
+transform/pos = Vector2( 32.5062, 237.626 )
+texture = ExtResource( 52 )
+
+[node name="nav" type="Sprite" parent="."]
+
+transform/pos = Vector2( 66, 238 )
+region = true
+region_rect = Rect2( 194, 458, 24, 24 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="nav"]
+
+navpoly = SubResource( 1 )
+enabled = true
+
+

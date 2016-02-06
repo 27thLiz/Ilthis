@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://objects/dungeon/door.gd" type="Script" id=1]
+[ext_resource path="res://objects/sprites/door.atex" type="Texture" id=2]
+
+[node name="Door" type="Node2D"]
+
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Object" type="Node" parent="."]
+
+script/script = ExtResource( 1 )
+player = false
+
+[node name="Sprite" type="Sprite" parent="."]
+
+z/z = 2
+texture = ExtResource( 2 )
+centered = false
+
+

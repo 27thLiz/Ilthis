@@ -1,0 +1,465 @@
+[gd_resource type="TileSet" load_steps=52 format=1]
+
+[ext_resource path="res://map/sand_0.atex" type="Texture" id=1]
+[ext_resource path="res://map/sand_1.atex" type="Texture" id=2]
+[ext_resource path="res://map/sand_2.atex" type="Texture" id=3]
+[ext_resource path="res://map/sand_20.atex" type="Texture" id=4]
+[ext_resource path="res://map/sand_21.atex" type="Texture" id=5]
+[ext_resource path="res://map/sand_22.atex" type="Texture" id=6]
+[ext_resource path="res://map/sand_24.atex" type="Texture" id=7]
+[ext_resource path="res://map/sand_25.atex" type="Texture" id=8]
+[ext_resource path="res://map/sand_26.atex" type="Texture" id=9]
+[ext_resource path="res://map/sand_27.atex" type="Texture" id=10]
+[ext_resource path="res://map/sand_28.atex" type="Texture" id=11]
+[ext_resource path="res://map/sand_3.atex" type="Texture" id=12]
+[ext_resource path="res://map/sand_10.atex" type="Texture" id=13]
+[ext_resource path="res://map/sand_30.atex" type="Texture" id=14]
+[ext_resource path="res://map/sand_31.atex" type="Texture" id=15]
+[ext_resource path="res://map/sand_32.atex" type="Texture" id=16]
+[ext_resource path="res://map/sand_33.atex" type="Texture" id=17]
+[ext_resource path="res://map/sand_34.atex" type="Texture" id=18]
+[ext_resource path="res://map/sand_36.atex" type="Texture" id=19]
+[ext_resource path="res://map/sand_37.atex" type="Texture" id=20]
+[ext_resource path="res://map/sand_38.atex" type="Texture" id=21]
+[ext_resource path="res://map/sand_39.atex" type="Texture" id=22]
+[ext_resource path="res://map/sand_4.atex" type="Texture" id=23]
+[ext_resource path="res://map/sand_11.atex" type="Texture" id=24]
+[ext_resource path="res://map/sand_40.atex" type="Texture" id=25]
+[ext_resource path="res://map/sand_42.atex" type="Texture" id=26]
+[ext_resource path="res://map/sand_43.atex" type="Texture" id=27]
+[ext_resource path="res://map/sand_44.atex" type="Texture" id=28]
+[ext_resource path="res://map/sand_45.atex" type="Texture" id=29]
+[ext_resource path="res://map/sand_46.atex" type="Texture" id=30]
+[ext_resource path="res://map/sand_48.atex" type="Texture" id=31]
+[ext_resource path="res://map/sand_49.atex" type="Texture" id=32]
+[ext_resource path="res://map/sand_5.atex" type="Texture" id=33]
+[ext_resource path="res://map/sand_50.atex" type="Texture" id=34]
+[ext_resource path="res://map/sand_13.atex" type="Texture" id=35]
+[ext_resource path="res://map/sand_51.atex" type="Texture" id=36]
+[ext_resource path="res://map/sand_52.atex" type="Texture" id=37]
+[ext_resource path="res://map/sand_54.atex" type="Texture" id=38]
+[ext_resource path="res://map/sand_55.atex" type="Texture" id=39]
+[ext_resource path="res://map/sand_56.atex" type="Texture" id=40]
+[ext_resource path="res://map/sand_57.atex" type="Texture" id=41]
+[ext_resource path="res://map/sand_58.atex" type="Texture" id=42]
+[ext_resource path="res://map/sand_6.atex" type="Texture" id=43]
+[ext_resource path="res://map/sand_7.atex" type="Texture" id=44]
+[ext_resource path="res://map/sand_8.atex" type="Texture" id=45]
+[ext_resource path="res://map/sand_14.atex" type="Texture" id=46]
+[ext_resource path="res://map/sand_9.atex" type="Texture" id=47]
+[ext_resource path="res://map/sand_15.atex" type="Texture" id=48]
+[ext_resource path="res://map/sand_16.atex" type="Texture" id=49]
+[ext_resource path="res://map/sand_18.atex" type="Texture" id=50]
+[ext_resource path="res://map/sand_19.atex" type="Texture" id=51]
+
+[resource]
+
+0/name = "Sprite"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/region = Rect2( 0, 0, 0, 0 )
+0/occluder_offset = Vector2( 12, 12 )
+0/navigation_offset = Vector2( 12, 12 )
+0/shape_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+1/name = "Sprite1"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/region = Rect2( 0, 0, 0, 0 )
+1/occluder_offset = Vector2( 12, 12 )
+1/navigation_offset = Vector2( 12, 12 )
+1/shape_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+2/name = "Sprite2"
+2/texture = ExtResource( 13 )
+2/tex_offset = Vector2( 0, 0 )
+2/region = Rect2( 0, 0, 0, 0 )
+2/occluder_offset = Vector2( 12, 12 )
+2/navigation_offset = Vector2( 12, 12 )
+2/shape_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+3/name = "Sprite3"
+3/texture = ExtResource( 24 )
+3/tex_offset = Vector2( 0, 0 )
+3/region = Rect2( 0, 0, 0, 0 )
+3/occluder_offset = Vector2( 12, 12 )
+3/navigation_offset = Vector2( 12, 12 )
+3/shape_offset = Vector2( 0, 0 )
+3/shapes = [  ]
+4/name = "Sprite4"
+4/texture = ExtResource( 35 )
+4/tex_offset = Vector2( 0, 0 )
+4/region = Rect2( 0, 0, 0, 0 )
+4/occluder_offset = Vector2( 12, 12 )
+4/navigation_offset = Vector2( 12, 12 )
+4/shape_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+5/name = "Sprite5"
+5/texture = ExtResource( 46 )
+5/tex_offset = Vector2( 0, 0 )
+5/region = Rect2( 0, 0, 0, 0 )
+5/occluder_offset = Vector2( 12, 12 )
+5/navigation_offset = Vector2( 12, 12 )
+5/shape_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+6/name = "Sprite6"
+6/texture = ExtResource( 48 )
+6/tex_offset = Vector2( 0, 0 )
+6/region = Rect2( 0, 0, 0, 0 )
+6/occluder_offset = Vector2( 12, 12 )
+6/navigation_offset = Vector2( 12, 12 )
+6/shape_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+7/name = "Sprite7"
+7/texture = ExtResource( 49 )
+7/tex_offset = Vector2( 0, 0 )
+7/region = Rect2( 0, 0, 0, 0 )
+7/occluder_offset = Vector2( 12, 12 )
+7/navigation_offset = Vector2( 12, 12 )
+7/shape_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+8/name = "Sprite8"
+8/texture = ExtResource( 50 )
+8/tex_offset = Vector2( 0, 0 )
+8/region = Rect2( 0, 0, 0, 0 )
+8/occluder_offset = Vector2( 12, 12 )
+8/navigation_offset = Vector2( 12, 12 )
+8/shape_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+9/name = "Sprite9"
+9/texture = ExtResource( 51 )
+9/tex_offset = Vector2( 0, 0 )
+9/region = Rect2( 0, 0, 0, 0 )
+9/occluder_offset = Vector2( 12, 12 )
+9/navigation_offset = Vector2( 12, 12 )
+9/shape_offset = Vector2( 0, 0 )
+9/shapes = [  ]
+10/name = "Sprite10"
+10/texture = ExtResource( 3 )
+10/tex_offset = Vector2( 0, 0 )
+10/region = Rect2( 0, 0, 0, 0 )
+10/occluder_offset = Vector2( 12, 12 )
+10/navigation_offset = Vector2( 12, 12 )
+10/shape_offset = Vector2( 0, 0 )
+10/shapes = [  ]
+11/name = "Sprite11"
+11/texture = ExtResource( 4 )
+11/tex_offset = Vector2( 0, 0 )
+11/region = Rect2( 0, 0, 0, 0 )
+11/occluder_offset = Vector2( 12, 12 )
+11/navigation_offset = Vector2( 12, 12 )
+11/shape_offset = Vector2( 0, 0 )
+11/shapes = [  ]
+12/name = "Sprite12"
+12/texture = ExtResource( 5 )
+12/tex_offset = Vector2( 0, 0 )
+12/region = Rect2( 0, 0, 0, 0 )
+12/occluder_offset = Vector2( 12, 12 )
+12/navigation_offset = Vector2( 12, 12 )
+12/shape_offset = Vector2( 0, 0 )
+12/shapes = [  ]
+13/name = "Sprite13"
+13/texture = ExtResource( 6 )
+13/tex_offset = Vector2( 0, 0 )
+13/region = Rect2( 0, 0, 0, 0 )
+13/occluder_offset = Vector2( 12, 12 )
+13/navigation_offset = Vector2( 12, 12 )
+13/shape_offset = Vector2( 0, 0 )
+13/shapes = [  ]
+14/name = "Sprite14"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/region = Rect2( 0, 0, 0, 0 )
+14/occluder_offset = Vector2( 12, 12 )
+14/navigation_offset = Vector2( 12, 12 )
+14/shape_offset = Vector2( 0, 0 )
+14/shapes = [  ]
+15/name = "Sprite15"
+15/texture = ExtResource( 8 )
+15/tex_offset = Vector2( 0, 0 )
+15/region = Rect2( 0, 0, 0, 0 )
+15/occluder_offset = Vector2( 12, 12 )
+15/navigation_offset = Vector2( 12, 12 )
+15/shape_offset = Vector2( 0, 0 )
+15/shapes = [  ]
+16/name = "Sprite16"
+16/texture = ExtResource( 9 )
+16/tex_offset = Vector2( 0, 0 )
+16/region = Rect2( 0, 0, 0, 0 )
+16/occluder_offset = Vector2( 12, 12 )
+16/navigation_offset = Vector2( 12, 12 )
+16/shape_offset = Vector2( 0, 0 )
+16/shapes = [  ]
+17/name = "Sprite17"
+17/texture = ExtResource( 10 )
+17/tex_offset = Vector2( 0, 0 )
+17/region = Rect2( 0, 0, 0, 0 )
+17/occluder_offset = Vector2( 12, 12 )
+17/navigation_offset = Vector2( 12, 12 )
+17/shape_offset = Vector2( 0, 0 )
+17/shapes = [  ]
+18/name = "Sprite18"
+18/texture = ExtResource( 11 )
+18/tex_offset = Vector2( 0, 0 )
+18/region = Rect2( 0, 0, 0, 0 )
+18/occluder_offset = Vector2( 12, 12 )
+18/navigation_offset = Vector2( 12, 12 )
+18/shape_offset = Vector2( 0, 0 )
+18/shapes = [  ]
+19/name = "Sprite19"
+19/texture = ExtResource( 12 )
+19/tex_offset = Vector2( 0, 0 )
+19/region = Rect2( 0, 0, 0, 0 )
+19/occluder_offset = Vector2( 12, 12 )
+19/navigation_offset = Vector2( 12, 12 )
+19/shape_offset = Vector2( 0, 0 )
+19/shapes = [  ]
+20/name = "Sprite20"
+20/texture = ExtResource( 14 )
+20/tex_offset = Vector2( 0, 0 )
+20/region = Rect2( 0, 0, 0, 0 )
+20/occluder_offset = Vector2( 12, 12 )
+20/navigation_offset = Vector2( 12, 12 )
+20/shape_offset = Vector2( 0, 0 )
+20/shapes = [  ]
+21/name = "Sprite21"
+21/texture = ExtResource( 15 )
+21/tex_offset = Vector2( 0, 0 )
+21/region = Rect2( 0, 0, 0, 0 )
+21/occluder_offset = Vector2( 12, 12 )
+21/navigation_offset = Vector2( 12, 12 )
+21/shape_offset = Vector2( 0, 0 )
+21/shapes = [  ]
+22/name = "Sprite22"
+22/texture = ExtResource( 16 )
+22/tex_offset = Vector2( 0, 0 )
+22/region = Rect2( 0, 0, 0, 0 )
+22/occluder_offset = Vector2( 12, 12 )
+22/navigation_offset = Vector2( 12, 12 )
+22/shape_offset = Vector2( 0, 0 )
+22/shapes = [  ]
+23/name = "Sprite23"
+23/texture = ExtResource( 17 )
+23/tex_offset = Vector2( 0, 0 )
+23/region = Rect2( 0, 0, 0, 0 )
+23/occluder_offset = Vector2( 12, 12 )
+23/navigation_offset = Vector2( 12, 12 )
+23/shape_offset = Vector2( 0, 0 )
+23/shapes = [  ]
+24/name = "Sprite24"
+24/texture = ExtResource( 18 )
+24/tex_offset = Vector2( 0, 0 )
+24/region = Rect2( 0, 0, 0, 0 )
+24/occluder_offset = Vector2( 12, 12 )
+24/navigation_offset = Vector2( 12, 12 )
+24/shape_offset = Vector2( 0, 0 )
+24/shapes = [  ]
+25/name = "Sprite25"
+25/texture = ExtResource( 19 )
+25/tex_offset = Vector2( 0, 0 )
+25/region = Rect2( 0, 0, 0, 0 )
+25/occluder_offset = Vector2( 12, 12 )
+25/navigation_offset = Vector2( 12, 12 )
+25/shape_offset = Vector2( 0, 0 )
+25/shapes = [  ]
+26/name = "Sprite26"
+26/texture = ExtResource( 20 )
+26/tex_offset = Vector2( 0, 0 )
+26/region = Rect2( 0, 0, 0, 0 )
+26/occluder_offset = Vector2( 12, 12 )
+26/navigation_offset = Vector2( 12, 12 )
+26/shape_offset = Vector2( 0, 0 )
+26/shapes = [  ]
+27/name = "Sprite27"
+27/texture = ExtResource( 21 )
+27/tex_offset = Vector2( 0, 0 )
+27/region = Rect2( 0, 0, 0, 0 )
+27/occluder_offset = Vector2( 12, 12 )
+27/navigation_offset = Vector2( 12, 12 )
+27/shape_offset = Vector2( 0, 0 )
+27/shapes = [  ]
+28/name = "Sprite28"
+28/texture = ExtResource( 22 )
+28/tex_offset = Vector2( 0, 0 )
+28/region = Rect2( 0, 0, 0, 0 )
+28/occluder_offset = Vector2( 12, 12 )
+28/navigation_offset = Vector2( 12, 12 )
+28/shape_offset = Vector2( 0, 0 )
+28/shapes = [  ]
+29/name = "Sprite29"
+29/texture = ExtResource( 23 )
+29/tex_offset = Vector2( 0, 0 )
+29/region = Rect2( 0, 0, 0, 0 )
+29/occluder_offset = Vector2( 12, 12 )
+29/navigation_offset = Vector2( 12, 12 )
+29/shape_offset = Vector2( 0, 0 )
+29/shapes = [  ]
+30/name = "Sprite30"
+30/texture = ExtResource( 25 )
+30/tex_offset = Vector2( 0, 0 )
+30/region = Rect2( 0, 0, 0, 0 )
+30/occluder_offset = Vector2( 12, 12 )
+30/navigation_offset = Vector2( 12, 12 )
+30/shape_offset = Vector2( 0, 0 )
+30/shapes = [  ]
+31/name = "Sprite31"
+31/texture = ExtResource( 26 )
+31/tex_offset = Vector2( 0, 0 )
+31/region = Rect2( 0, 0, 0, 0 )
+31/occluder_offset = Vector2( 12, 12 )
+31/navigation_offset = Vector2( 12, 12 )
+31/shape_offset = Vector2( 0, 0 )
+31/shapes = [  ]
+32/name = "Sprite32"
+32/texture = ExtResource( 27 )
+32/tex_offset = Vector2( 0, 0 )
+32/region = Rect2( 0, 0, 0, 0 )
+32/occluder_offset = Vector2( 12, 12 )
+32/navigation_offset = Vector2( 12, 12 )
+32/shape_offset = Vector2( 0, 0 )
+32/shapes = [  ]
+33/name = "Sprite33"
+33/texture = ExtResource( 28 )
+33/tex_offset = Vector2( 0, 0 )
+33/region = Rect2( 0, 0, 0, 0 )
+33/occluder_offset = Vector2( 12, 12 )
+33/navigation_offset = Vector2( 12, 12 )
+33/shape_offset = Vector2( 0, 0 )
+33/shapes = [  ]
+34/name = "Sprite34"
+34/texture = ExtResource( 29 )
+34/tex_offset = Vector2( 0, 0 )
+34/region = Rect2( 0, 0, 0, 0 )
+34/occluder_offset = Vector2( 12, 12 )
+34/navigation_offset = Vector2( 12, 12 )
+34/shape_offset = Vector2( 0, 0 )
+34/shapes = [  ]
+35/name = "Sprite35"
+35/texture = ExtResource( 30 )
+35/tex_offset = Vector2( 0, 0 )
+35/region = Rect2( 0, 0, 0, 0 )
+35/occluder_offset = Vector2( 12, 12 )
+35/navigation_offset = Vector2( 12, 12 )
+35/shape_offset = Vector2( 0, 0 )
+35/shapes = [  ]
+36/name = "Sprite36"
+36/texture = ExtResource( 31 )
+36/tex_offset = Vector2( 0, 0 )
+36/region = Rect2( 0, 0, 0, 0 )
+36/occluder_offset = Vector2( 12, 12 )
+36/navigation_offset = Vector2( 12, 12 )
+36/shape_offset = Vector2( 0, 0 )
+36/shapes = [  ]
+37/name = "Sprite37"
+37/texture = ExtResource( 32 )
+37/tex_offset = Vector2( 0, 0 )
+37/region = Rect2( 0, 0, 0, 0 )
+37/occluder_offset = Vector2( 12, 12 )
+37/navigation_offset = Vector2( 12, 12 )
+37/shape_offset = Vector2( 0, 0 )
+37/shapes = [  ]
+38/name = "Sprite38"
+38/texture = ExtResource( 33 )
+38/tex_offset = Vector2( 0, 0 )
+38/region = Rect2( 0, 0, 0, 0 )
+38/occluder_offset = Vector2( 12, 12 )
+38/navigation_offset = Vector2( 12, 12 )
+38/shape_offset = Vector2( 0, 0 )
+38/shapes = [  ]
+39/name = "Sprite39"
+39/texture = ExtResource( 34 )
+39/tex_offset = Vector2( 0, 0 )
+39/region = Rect2( 0, 0, 0, 0 )
+39/occluder_offset = Vector2( 12, 12 )
+39/navigation_offset = Vector2( 12, 12 )
+39/shape_offset = Vector2( 0, 0 )
+39/shapes = [  ]
+40/name = "Sprite40"
+40/texture = ExtResource( 36 )
+40/tex_offset = Vector2( 0, 0 )
+40/region = Rect2( 0, 0, 0, 0 )
+40/occluder_offset = Vector2( 12, 12 )
+40/navigation_offset = Vector2( 12, 12 )
+40/shape_offset = Vector2( 0, 0 )
+40/shapes = [  ]
+41/name = "Sprite41"
+41/texture = ExtResource( 37 )
+41/tex_offset = Vector2( 0, 0 )
+41/region = Rect2( 0, 0, 0, 0 )
+41/occluder_offset = Vector2( 12, 12 )
+41/navigation_offset = Vector2( 12, 12 )
+41/shape_offset = Vector2( 0, 0 )
+41/shapes = [  ]
+42/name = "Sprite42"
+42/texture = ExtResource( 38 )
+42/tex_offset = Vector2( 0, 0 )
+42/region = Rect2( 0, 0, 0, 0 )
+42/occluder_offset = Vector2( 12, 12 )
+42/navigation_offset = Vector2( 12, 12 )
+42/shape_offset = Vector2( 0, 0 )
+42/shapes = [  ]
+43/name = "Sprite43"
+43/texture = ExtResource( 39 )
+43/tex_offset = Vector2( 0, 0 )
+43/region = Rect2( 0, 0, 0, 0 )
+43/occluder_offset = Vector2( 12, 12 )
+43/navigation_offset = Vector2( 12, 12 )
+43/shape_offset = Vector2( 0, 0 )
+43/shapes = [  ]
+44/name = "Sprite44"
+44/texture = ExtResource( 40 )
+44/tex_offset = Vector2( 0, 0 )
+44/region = Rect2( 0, 0, 0, 0 )
+44/occluder_offset = Vector2( 12, 12 )
+44/navigation_offset = Vector2( 12, 12 )
+44/shape_offset = Vector2( 0, 0 )
+44/shapes = [  ]
+45/name = "Sprite45"
+45/texture = ExtResource( 41 )
+45/tex_offset = Vector2( 0, 0 )
+45/region = Rect2( 0, 0, 0, 0 )
+45/occluder_offset = Vector2( 12, 12 )
+45/navigation_offset = Vector2( 12, 12 )
+45/shape_offset = Vector2( 0, 0 )
+45/shapes = [  ]
+46/name = "Sprite46"
+46/texture = ExtResource( 42 )
+46/tex_offset = Vector2( 0, 0 )
+46/region = Rect2( 0, 0, 0, 0 )
+46/occluder_offset = Vector2( 12, 12 )
+46/navigation_offset = Vector2( 12, 12 )
+46/shape_offset = Vector2( 0, 0 )
+46/shapes = [  ]
+47/name = "Sprite47"
+47/texture = ExtResource( 43 )
+47/tex_offset = Vector2( 0, 0 )
+47/region = Rect2( 0, 0, 0, 0 )
+47/occluder_offset = Vector2( 12, 12 )
+47/navigation_offset = Vector2( 12, 12 )
+47/shape_offset = Vector2( 0, 0 )
+47/shapes = [  ]
+48/name = "Sprite48"
+48/texture = ExtResource( 44 )
+48/tex_offset = Vector2( 0, 0 )
+48/region = Rect2( 0, 0, 0, 0 )
+48/occluder_offset = Vector2( 12, 12 )
+48/navigation_offset = Vector2( 12, 12 )
+48/shape_offset = Vector2( 0, 0 )
+48/shapes = [  ]
+49/name = "Sprite49"
+49/texture = ExtResource( 45 )
+49/tex_offset = Vector2( 0, 0 )
+49/region = Rect2( 0, 0, 0, 0 )
+49/occluder_offset = Vector2( 12, 12 )
+49/navigation_offset = Vector2( 12, 12 )
+49/shape_offset = Vector2( 0, 0 )
+49/shapes = [  ]
+50/name = "Sprite50"
+50/texture = ExtResource( 47 )
+50/tex_offset = Vector2( 0, 0 )
+50/region = Rect2( 0, 0, 0, 0 )
+50/occluder_offset = Vector2( 12, 12 )
+50/navigation_offset = Vector2( 12, 12 )
+50/shape_offset = Vector2( 0, 0 )
+50/shapes = [  ]
+

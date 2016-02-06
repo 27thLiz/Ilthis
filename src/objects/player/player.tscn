@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://objects/player/player_debug.gd" type="Script" id=1]
+[ext_resource path="res://objects/sprites/player.atex" type="Texture" id=2]
+[ext_resource path="res://objects/object.tscn" type="PackedScene" id=3]
+[ext_resource path="res://map/misc/light.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "\nextends Light2D\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\nvar time = 0.0\n\nfunc _ready():\n\t# Initialization here\n\tpass\n\n"
+
+[node name="Player" type="Node2D"]
+
+visibility/light_mask = 2
+transform/pos = Vector2( 1.90735e-06, -0.0769463 )
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="Object" parent="." instance=ExtResource( 3 )]
+
+player = true
+
+[node name="Light2D" type="Light2D" parent="."]
+
+visibility/light_mask = 2
+transform/pos = Vector2( 0.23196, -0.347942 )
+enabled = true
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 0.928734, 0.980469, 0.631943, 1 )
+energy = 5.0
+mode = 0
+range/height = 2.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 2
+range/item_mask = 2
+shadow/enabled = true
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+script/script = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+

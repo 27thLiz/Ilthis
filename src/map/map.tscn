@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://darken.tres" type="CanvasItemMaterial" id=1]
+[ext_resource path="res://dungeon1.tres" type="TileSet" id=2]
+[ext_resource path="res://objects/player/player.tscn" type="PackedScene" id=3]
+
+[node name="map" type="Node2D"]
+
+material/material = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="nav" type="Navigation2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="nav"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray(  )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 12, 12 )
+z/z = 1
+
+
