@@ -23,6 +23,7 @@ const DIR_DOWN = 1
 
 const directions = [Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)]
 onready var navmap = Map.get_node("nav/TileMap")
+onready var pathfinder = path_finder.new()
 var room_scn = preload("../map/base_room.tscn")
 var door_scn = preload("../objects/dungeon/door.tscn")
 var floor_tiles = [0, 8, 14, 20, 25, 31, 36, 42, 47]
@@ -32,23 +33,22 @@ var rooms = []
 var num_rooms = 0
 var current_tunnel_tiles = []
 
+
 func _ready():
 	init_navmap()
-	print(navmap.get_tileset().get_tiles_ids().size())
 	generate_dungeon()
 	pass
 
 func init_navmap():
-	for x in range(128):
-		for y in range(128):
+	for x in range(-30, 128):
+		for y in range(-30, 128):
 			 navmap.set_cell(x, y, 52)
+
 func generate_dungeon():
 	randomize()
 	for x in range(0, 100, 15):
 		for y in range(0, 100, 15):
 			generate_room(x, y)
-	print("rooms: ", num_rooms)
-	#dig_tunnels()
 
 func get_room(tile_pos):
 	for i in range(rooms.size()):
@@ -69,13 +69,13 @@ func dig_tunnels():
 			rooms[room_id]["has_door"] = true
 		for dir in directions:
 			if !map.has(pos + dir):
-				print("can dig here")
+				#print("can dig here")
 				if dig_to(pos, dir):
 					for tile in current_tunnel_tiles:
 						var floor_type = floor_tiles[int(rand_range(0, floor_tiles.size()))]
 						rooms[0]["node"].set_cell(tile.x, tile.y, floor_type)
 						possible_floors.append(tile)
-						print(tile.x, tile.y)
+						#print(tile.x, tile.y)
 		finished = true
 		for room in rooms:
 			if !room["has_door"]:
@@ -88,10 +88,10 @@ func dig_to(pos, dir):
 	current_tunnel_tiles = []
 	for i in range(30):
 		var tile = pos + dir * i
-		print("try tile ", tile)
+		#print("try tile ", tile)
 		if map.has(tile):
 			var type = map[tile][TYPE]
-			print("type is :", type)
+			#print("type is :", type)
 			if type == TILE_WALL0:
 				ret = true
 				rooms[get_room(tile)]["has_door"] = true
@@ -160,7 +160,7 @@ func generate_room(pos_x, pos_y):
 		num_doors = 2
 		if rnd > 90:
 			num_doors = 3
-	print("num doors: ", num_doors)
+	#print("num doors: ", num_doors)
 	var sides = []
 	for i in range(num_doors):
 		var can_place = false

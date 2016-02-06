@@ -7,7 +7,7 @@
 [node name="map" type="Node2D"]
 
 material/material = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"2D" }
+__meta__ = { "__editor_plugin_screen__":"Script" }
 
 [node name="nav" type="Navigation2D" parent="."]
 
@@ -15,7 +15,7 @@ __meta__ = { "__editor_plugin_screen__":"2D" }
 
 mode = 0
 tile_set = ExtResource( 2 )
-cell/size = Vector2( 64, 64 )
+cell/size = Vector2( 24, 24 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 cell/half_offset = 2
@@ -31,7 +31,7 @@ tile_data = IntArray(  )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 12, 12 )
+transform/pos = Vector2( 24, 24 )
 z/z = 1
 
 

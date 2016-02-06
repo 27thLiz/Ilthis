@@ -12,13 +12,13 @@ script/source = "\nextends Light2D\n\n# member variables here, example:\n# var a
 [node name="Player" type="Node2D"]
 
 visibility/light_mask = 2
-transform/pos = Vector2( 1.90735e-06, -0.0769463 )
 script/script = ExtResource( 1 )
-__meta__ = { "__editor_plugin_screen__":"Script" }
+__meta__ = { "__editor_plugin_screen__":"2D" }
 
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
+centered = false
 
 [node name="Object" parent="." instance=ExtResource( 3 )]
 
