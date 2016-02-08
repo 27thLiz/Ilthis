@@ -21,6 +21,8 @@ const DIR_RIGHT = 0
 const DIR_UP = 3
 const DIR_DOWN = 1
 
+const MAX_ROOM_SIZE = 15
+
 const directions = [Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)]
 onready var navmap = Map.get_node("nav/TileMap")
 
@@ -39,7 +41,7 @@ var start_ticks
 func _ready():
 	start_ticks = OS.get_ticks_msec()
 	init_navmap()
-	generate_dungeon()
+	generate_dungeon(50, 50)
 	call_deferred("dig_tunnels")
 
 func init_navmap():
@@ -47,11 +49,11 @@ func init_navmap():
 		for y in range(-30, 128):
 			 navmap.set_cell(x, y, 52)
 
-func generate_dungeon():
+func generate_dungeon(width, height):
 	randomize()
-	for x in range(0, 100, 15):
-		for y in range(0, 100, 15):
-			if y == 90:
+	for x in range(0, width, MAX_ROOM_SIZE):
+		for y in range(0, height, MAX_ROOM_SIZE):
+			if y > height - MAX_ROOM_SIZE:
 				generate_room(x, y, true)
 			else:
 				generate_room(x, y)
@@ -130,17 +132,20 @@ func generate_room(pos_x, pos_y, last = false):
 	var room = room_scn.instance()
 	var pos_x_global = 0 + pos_x * 24
 	var pos_y_global = 0 + pos_y * 24
-	var width = int(rand_range(5, 15))
+	var width  = int(rand_range(5, 15))
 	var height = int(rand_range(5, 15))
 
 	var room_tiles = []
 	var _x = width
 	var _y = height
 
+	var offset_x = int((15 - width) / 2)
+	var offset_y = int((15 - height) / 2)
+
 	for x in range(width):
 		for y in range(height):
 			var tile = floor_tiles[int(rand_range(0, floor_tiles.size()))]
-			var tile_pos = Vector2(pos_x + x, pos_y + y)
+			var tile_pos = Vector2(pos_x + offset_x + x, pos_y + offset_y + y)
 			var walkable = true
 			var type = TILE_FLOOR
 			if (x == 0 and y == 0):
@@ -178,9 +183,9 @@ func generate_room(pos_x, pos_y, last = false):
 				tile = WALL_DOWN_RIGHT
 				walkable = false
 				type = TILE_WALL1
-			room.set_cell(x, y, tile)
+			room.set_cell(offset_x + x, offset_y + y, tile)
 			map[tile_pos] = {WALKABLE:walkable, TYPE:type}
-			navmap.set_cell(pos_x + x, pos_y + y, -1)
+			navmap.set_cell(pos_x + offset_x + x, pos_y + offset_y + y, -1)
 
 	var rnd = randi() % 100
 	var num_doors = 2
