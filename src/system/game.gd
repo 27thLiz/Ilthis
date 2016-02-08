@@ -23,7 +23,7 @@ const DIR_DOWN = 1
 
 const directions = [Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)]
 onready var navmap = Map.get_node("nav/TileMap")
-onready var pathfinder = path_finder.new()
+
 var room_scn = preload("../map/base_room.tscn")
 var door_scn = preload("../objects/dungeon/door.tscn")
 var floor_tiles = [0, 8, 14, 20, 25, 31, 36, 42, 47]
@@ -32,12 +32,15 @@ var map = {}
 var rooms = []
 var num_rooms = 0
 var current_tunnel_tiles = []
+var total_doors = 0
 
+var start_ticks
 
 func _ready():
+	start_ticks = OS.get_ticks_msec()
 	init_navmap()
 	generate_dungeon()
-	pass
+	call_deferred("dig_tunnels")
 
 func init_navmap():
 	for x in range(-30, 128):
@@ -48,70 +51,94 @@ func generate_dungeon():
 	randomize()
 	for x in range(0, 100, 15):
 		for y in range(0, 100, 15):
-			generate_room(x, y)
+			if y == 90:
+				generate_room(x, y, true)
+			else:
+				generate_room(x, y)
 
-func get_room(tile_pos):
-	for i in range(rooms.size()):
-		var id = rooms[i]["tiles"].find(tile_pos)
-		if id != -1:
-			return i
-	print("error, couldn't find room for tile position: ", tile_pos)
-	return -1
+func make_tunnel(from, to):
+	var grid_points = []
+	var cur_pos = from
+	var end = to
+	var points = Map.get_node("nav").get_simple_path(from, to, false)
+	var start_tile = Game.navmap.world_to_map(cur_pos)
+	var end_tile = Game.navmap.world_to_map(to)
+	var cur_tile = start_tile
+	grid_points.append(start_tile)
+	grid_points.append(end_tile)
+
+
+	if Array(points).size() < 2:
+		print("pathfinding error")
+		return
+
+	for i in range(1, points.size()):
+		var p = points[i]
+		var dist = abs(p.distance_to(cur_pos))
+		if dist < 24:
+			continue
+		var dx = p.x - cur_pos.x
+		var dy = p.y - cur_pos.y
+		if abs(dx) > abs(dy):
+			if dx > 0:
+				cur_tile = cur_tile + Vector2(1, 0)
+				cur_pos = cur_pos + Vector2(24, 0)
+			else:
+				cur_tile = cur_tile + Vector2(-1, 0)
+				cur_pos = cur_pos + Vector2(-24, 0)
+		else:
+			if dy > 0:
+				cur_tile = cur_tile + Vector2(0, 1)
+				cur_pos = cur_pos + Vector2(0, 24)
+			else:
+				cur_tile = cur_tile + Vector2(0, -1)
+				cur_pos = cur_pos + Vector2(0, -24)
+		grid_points.append(cur_tile)
+		var tile = floor_tiles[int(rand_range(0, floor_tiles.size()))]
+		navmap.set_cell(cur_tile.x, cur_tile.y, tile)
+
+func get_nearest_door(in_room, door_pos):
+	var nearest_dist = 0
+	var nearest_door
+	for room in rooms:
+		if room == in_room:
+			continue
+		for door in room["doors"]:
+			if door["connected"]:
+				continue
+			var dist = abs(door_pos.distance_to(door["pos"]))
+			if nearest_dist == 0 or dist < nearest_dist:
+				nearest_dist = dist
+				nearest_door = door
+
+	nearest_door["connected"] = true
+	return nearest_door
 
 func dig_tunnels():
 	var finished = false
-	while !finished:
-		
-		var index = int(rand_range(0, possible_floors.size()))
-		var pos = possible_floors[index]
-		var room_id = get_room(pos)
-		if room_id != -1:
-			rooms[room_id]["has_door"] = true
-		for dir in directions:
-			if !map.has(pos + dir):
-				#print("can dig here")
-				if dig_to(pos, dir):
-					for tile in current_tunnel_tiles:
-						var floor_type = floor_tiles[int(rand_range(0, floor_tiles.size()))]
-						rooms[0]["node"].set_cell(tile.x, tile.y, floor_type)
-						possible_floors.append(tile)
-						#print(tile.x, tile.y)
-		finished = true
-		for room in rooms:
-			if !room["has_door"]:
-				finished = false
-				break
-	pass
+	for room in rooms:
+		for door in room["doors"]:
+			if door["connected"]:
+				continue
+			var end_door = get_nearest_door(room, door["pos"])
+			var start = navmap.map_to_world(door["pos"]) + Vector2(12,12)
+			var end = navmap.map_to_world(end_door["pos"]) + Vector2(12, 12)
+			make_tunnel(start, end)
+	print("generated dungeon in ", OS.get_ticks_msec() - start_ticks, " ms")
 
-func dig_to(pos, dir):
-	var ret = false
-	current_tunnel_tiles = []
-	for i in range(30):
-		var tile = pos + dir * i
-		#print("try tile ", tile)
-		if map.has(tile):
-			var type = map[tile][TYPE]
-			#print("type is :", type)
-			if type == TILE_WALL0:
-				ret = true
-				rooms[get_room(tile)]["has_door"] = true
-			#if type == TILE_WALL1:
-		else:
-			current_tunnel_tiles.append(tile)
-	if !ret:
-		current_tunnel_tiles = []
-	return ret
-
-func generate_room(pos_x, pos_y):
+func generate_room(pos_x, pos_y, last = false):
 	var room = room_scn.instance()
 	var pos_x_global = 0 + pos_x * 24
 	var pos_y_global = 0 + pos_y * 24
-	var _x = int(rand_range(5, 15))
-	var _y = int(rand_range(5, 15))
-	var rect = Rect2(pos_x_global, pos_y_global, _x + 3, _y + 3)
+	var width = int(rand_range(5, 15))
+	var height = int(rand_range(5, 15))
+
 	var room_tiles = []
-	for x in range(_x):
-		for y in range(_y):
+	var _x = width
+	var _y = height
+
+	for x in range(width):
+		for y in range(height):
 			var tile = floor_tiles[int(rand_range(0, floor_tiles.size()))]
 			var tile_pos = Vector2(pos_x + x, pos_y + y)
 			var walkable = true
@@ -153,15 +180,21 @@ func generate_room(pos_x, pos_y):
 				type = TILE_WALL1
 			room.set_cell(x, y, tile)
 			map[tile_pos] = {WALKABLE:walkable, TYPE:type}
-	#var num_doors = int(rand_range(0, 3
+			navmap.set_cell(pos_x + x, pos_y + y, -1)
+
 	var rnd = randi() % 100
-	var num_doors = 1
-	if rnd > 65:
-		num_doors = 2
+	var num_doors = 2
+	if last:
+		if (total_doors + 1) % 2 == 0:
+			num_doors = 1
+	elif rnd > 65:
+		num_doors = 1
 		if rnd > 90:
 			num_doors = 3
-	#print("num doors: ", num_doors)
+
 	var sides = []
+	total_doors += num_doors
+	var doors = []
 	for i in range(num_doors):
 		var can_place = false
 		var t_id
@@ -173,8 +206,9 @@ func generate_room(pos_x, pos_y):
 		Map.add_child(door)
 		door.get_node("Object").init(room_tiles[t_id]["pos"])
 		sides.append(room_tiles[t_id]["dir"])
-		
-	rooms.append({"node":room, "tiles":room_tiles, "has_door":false})
+		doors.append({"pos":room_tiles[t_id]["pos"], "connected":false, "dir":room_tiles[t_id]["dir"]})
+
+	rooms.append({"node":room, "tiles":room_tiles, "has_door":false, "doors":doors})
 	num_rooms += 1
 	Map.add_child(room)
 	room.set_pos(Vector2(pos_x_global, pos_y_global))
