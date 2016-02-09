@@ -61,15 +61,12 @@ func generate_dungeon(width, height):
 func make_tunnel(from, to):
 	var tunnel = room_scn.instance()
 	Map.add_child(tunnel)
-	var grid_points = []
 	var cur_pos = from
 	var end = to
 	var points = Map.get_node("nav").get_simple_path(from, to, false)
 	var start_tile = Game.navmap.world_to_map(cur_pos)
 	var end_tile = Game.navmap.world_to_map(to)
 	var cur_tile = start_tile
-	grid_points.append(start_tile)
-	grid_points.append(end_tile)
 
 	if Array(points).size() < 2:
 		print("pathfinding error")
@@ -96,7 +93,6 @@ func make_tunnel(from, to):
 			else:
 				cur_tile = cur_tile + Vector2(0, -1)
 				cur_pos = cur_pos + Vector2(0, -24)
-		grid_points.append(cur_tile)
 		var tile = floor_tiles[int(rand_range(0, floor_tiles.size()))]
 		tunnel.set_cell(cur_tile.x, cur_tile.y, tile)
 
