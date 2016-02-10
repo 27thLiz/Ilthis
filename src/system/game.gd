@@ -29,11 +29,9 @@ onready var navmap = Map.get_node("nav/TileMap")
 var room_scn = preload("../map/base_room.tscn")
 var door_scn = preload("../objects/dungeon/door.tscn")
 var floor_tiles = [0, 8, 14, 20, 25, 31, 36, 42, 47]
-var possible_floors = []
 var map = {}
 var rooms = []
 var num_rooms = 0
-var current_tunnel_tiles = []
 var total_doors = 0
 
 var start_ticks
@@ -43,6 +41,7 @@ func _ready():
 	init_navmap()
 	generate_dungeon(50, 50)
 	call_deferred("dig_tunnels")
+	place_exit()
 
 func init_navmap():
 	for x in range(-30, 128):
@@ -114,7 +113,6 @@ func get_nearest_door(in_room, door_pos):
 	return nearest_door
 
 func dig_tunnels():
-	var finished = false
 	for room in rooms:
 		for door in room["doors"]:
 			if door["connected"]:
@@ -151,7 +149,6 @@ func generate_room(pos_x, pos_y, last = false):
 				type = TILE_WALL1
 			if ((x == 0 or x == _x-1) and y < _y -1 and y != 0):
 				tile = WALL_V_MIDDLE
-				possible_floors.append(tile_pos)
 				walkable = false
 				type = TILE_WALL0
 				if x == 0:
@@ -169,7 +166,6 @@ func generate_room(pos_x, pos_y, last = false):
 				type = TILE_WALL1
 			if ((x != 0 and x < _x -1) and (y == 0 or y == _y-1)):
 				tile = WALL_H_MIDDLE
-				possible_floors.append(tile_pos)
 				walkable = false
 				type = TILE_WALL0
 				if y == 0:
@@ -210,9 +206,13 @@ func generate_room(pos_x, pos_y, last = false):
 		sides.append(room_tiles[t_id]["dir"])
 		doors.append({"pos":room_tiles[t_id]["pos"], "connected":false, "dir":room_tiles[t_id]["dir"]})
 
-	rooms.append({"node":room, "tiles":room_tiles, "has_door":false, "doors":doors})
+	rooms.append({"node":room, "tiles":room_tiles, "doors":doors})
 	num_rooms += 1
 	Map.add_child(room)
 	room.set_pos(Vector2(pos_x_global, pos_y_global))
 
-
+func place_exit():
+	var room = rooms[0]
+	#var room = rooms[int(rand_range(0, rooms.size()))]
+	#print("place exit in room ", rooms.find(room))
+	var stair = load("res://objects/dungeon/stairs.tscn").instance()
